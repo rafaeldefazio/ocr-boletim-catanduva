@@ -18,9 +18,9 @@ OU
 
 
 ### Funcionamento:
-- Site da prefeitura é acessado
-- Boletim do dia é baixado
-- Imagem é pré-processada
-- Dados são extraídos e salvos
+1. Site da prefeitura é acessado
+2. Boletim do dia é baixado
+3. Imagem é pré-processada
+4. Dados são extraídos e salvos
 
 
