@@ -6,7 +6,7 @@ Implementação de solução de reconhecimento de caracteres para melhor acompan
 - Python 2.7
 - - pytesseract
 - - numpy
-- - BeautifulSoup
+- - BeautifulSoup4
 - OpenCV 4
 - Tesseract 4.0
 
@@ -44,6 +44,6 @@ output_folder = 'output/'
 ## Estrutura 
 
 - Caminho XPath:
-- - /html/body/div[4]/div/div[2]/div/div/div[1]/div/div[1]/div[1]/div[1]/p[1]/img
-- Via Beautifulsoup
--- div.blog-single > div.inner-box > p::first-child > img['src']
+- - `/html/body/div[4]/div/div[2]/div/div/div[1]/div/div[1]/div[1]/div[1]/p[1]/img`
+- Via Beautiful Soup:
+- - `div.blog-single > div.inner-box > p::first-child > img['src']`
