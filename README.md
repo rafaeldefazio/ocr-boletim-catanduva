@@ -60,6 +60,9 @@ output_folder = 'output/'
 - Caminho XPath: `/html/body/div[4]/div/div[2]/div/div/div[1]/div/div[1]/div[1]/div[1]/p[1]/img`
 - Via Beautiful Soup: `div.blog-single > div.inner-box > p::first-child > img['src']`
 
+# Limitações
+
+O padrão da imagem deve ser mantido, os números devem ficar dentro dos limites, sem alteração de estrutura da imagem. A estrutura do site também deve ser mantida. Caso haja alterações, será necessário adaptar o script.
 
 # Roadmap
 - Cron diário com script
