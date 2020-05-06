@@ -2,6 +2,8 @@
 
 Implementação de solução de reconhecimento de caracteres para melhor acompanhamento epidemiológico na cidade de Catanduva. (`ocr-python.py`).
 
+![Representação](https://github.com/rafaeldefazio/ocr-boletim-catanduva/raw/master/schema.png)
+
 `roi.cpp` contém código experimental em C++, ainda não finalizado.
 
 ### Requisitos:
@@ -49,3 +51,7 @@ output_folder = 'output/'
 
 - Caminho XPath: `/html/body/div[4]/div/div[2]/div/div/div[1]/div/div[1]/div[1]/div[1]/p[1]/img`
 - Via Beautiful Soup: `div.blog-single > div.inner-box > p::first-child > img['src']`
+
+
+# Roadmap
+- Cron diário com script
