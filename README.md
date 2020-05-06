@@ -1,8 +1,12 @@
 # OCR: Boletim de Catanduva
 
-Implementação de solução de reconhecimento de caracteres para melhor acompanhamento epidemiológico na cidade de Catanduva.
+Implementação de solução de reconhecimento de caracteres para melhor acompanhamento epidemiológico na cidade de Catanduva. (`ocr-python.py`).
+
+`roi.cpp` contém código experimental em C++.
 
 ### Requisitos:
+
+
 - Python 2.7
 - - pytesseract
 - - numpy
