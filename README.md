@@ -4,7 +4,14 @@ Implementação de solução de reconhecimento de caracteres para melhor acompan
 
 
 ## Como funciona?
+
 ![Representação](https://github.com/rafaeldefazio/ocr-boletim-catanduva/raw/master/schema.png)
+
+## Funcionamento:
+1. Site da prefeitura é acessado
+2. Boletim do dia é baixado
+3. Imagem é pré-processada
+4. Dados são extraídos e salvos em formato `csv` ou `json`
 
 
 ## Objetivo
@@ -14,7 +21,7 @@ Implementação de solução de reconhecimento de caracteres para melhor acompan
 `roi.cpp` contém código experimental em C++, ainda não finalizado.
 
 
-### Requisitos:
+## Requisitos:
 
 
 - Python 2.7
@@ -31,13 +38,9 @@ OU
 - Tesseract 4.0
 
 
-### Funcionamento:
-1. Site da prefeitura é acessado
-2. Boletim do dia é baixado
-3. Imagem é pré-processada
-4. Dados são extraídos e salvos em formato `csv` ou `json`
 
-### Configurações
+
+## Configurações
 
 ```python
 # VARIÁVEIS
