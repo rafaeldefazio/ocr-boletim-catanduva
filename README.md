@@ -7,7 +7,7 @@ Implementação de solução de reconhecimento de caracteres para melhor acompan
 
 ![Representação](https://github.com/rafaeldefazio/ocr-boletim-catanduva/raw/master/schema.png)
 
-## Funcionamento:
+### Funcionamento:
 1. Site da prefeitura é acessado
 2. Boletim do dia é baixado
 3. Imagem é pré-processada
