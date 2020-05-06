@@ -51,3 +51,7 @@ output_folder = 'output/'
 
 - Caminho XPath: `/html/body/div[4]/div/div[2]/div/div/div[1]/div/div[1]/div[1]/div[1]/p[1]/img`
 - Via Beautiful Soup: `div.blog-single > div.inner-box > p::first-child > img['src']`
+
+
+# Roadmap
+- Cron diário com script
