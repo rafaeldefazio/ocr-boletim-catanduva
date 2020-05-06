@@ -18,9 +18,6 @@ Implementação de solução de reconhecimento de caracteres para melhor acompan
 ![Exemplo](https://github.com/rafaeldefazio/ocr-boletim-catanduva/raw/master/exemplo.jpg)
 
 
-`roi.cpp` contém código experimental em C++, ainda não finalizado.
-
-
 ## Requisitos:
 
 
@@ -66,3 +63,4 @@ output_folder = 'output/'
 
 # Roadmap
 - Cron diário com script
+- `roi.cpp` contém código experimental em C++, ainda não finalizado.
