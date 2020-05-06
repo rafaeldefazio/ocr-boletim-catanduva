@@ -41,3 +41,9 @@ output_folder = 'output/'
 - `output_folder`: localização da pasta em que ficarão as saídas dos dados
 
 
+## Estrutura 
+
+- Caminho XPath:
+- - /html/body/div[4]/div/div[2]/div/div/div[1]/div/div[1]/div[1]/div[1]/p[1]/img
+- Via Beautifulsoup
+-- div.blog-single > div.inner-box > p::first-child > img['src']
