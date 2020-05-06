@@ -2,7 +2,7 @@
 
 Implementação de solução de reconhecimento de caracteres para melhor acompanhamento epidemiológico na cidade de Catanduva. (`ocr-python.py`).
 
-[!Representação](https://github.com/rafaeldefazio/ocr-boletim-catanduva/raw/master/schema.png)
+![Representação](https://github.com/rafaeldefazio/ocr-boletim-catanduva/raw/master/schema.png)
 
 `roi.cpp` contém código experimental em C++, ainda não finalizado.
 
