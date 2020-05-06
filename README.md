@@ -21,6 +21,24 @@ OU
 1. Site da prefeitura é acessado
 2. Boletim do dia é baixado
 3. Imagem é pré-processada
-4. Dados são extraídos e salvos
+4. Dados são extraídos e salvos em formato `csv` ou `json`
+
+### Configurações
+
+# VARIÁVEIS
+```python
+FORMAT = 'json'
+WD = '/home/rafaelbdefazio/Imagens/covid-catanduva/exemplo/'
+SITE_URL = 'http://www.catanduva.sp.gov.br/coronavirus/'
+
+temp_images_folder = 'temp_images/']
+output_folder = 'output/'
+```
+`FORMAT`: formato do output (json ou csv)
+`WD`: localização do scripts e pastas (devem estar pré-criadas_
+output_folder = 'output/'
+`SITE_URL`: site da Prefeitura contendo boletim epidemiológico
+`temp_images_folder`: localização da pasta em que ficarão armazenadas as imagens para análise
+`output_folder`: localização da pasta em que ficarão as saídas dos dados
 
 
