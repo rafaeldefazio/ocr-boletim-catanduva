@@ -25,8 +25,8 @@ OU
 
 ### Configurações
 
-# VARIÁVEIS
 ```python
+# VARIÁVEIS
 FORMAT = 'json'
 WD = '/home/rafaelbdefazio/Imagens/covid-catanduva/exemplo/'
 SITE_URL = 'http://www.catanduva.sp.gov.br/coronavirus/'
