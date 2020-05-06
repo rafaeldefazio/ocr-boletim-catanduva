@@ -34,11 +34,10 @@ SITE_URL = 'http://www.catanduva.sp.gov.br/coronavirus/'
 temp_images_folder = 'temp_images/']
 output_folder = 'output/'
 ```
-`FORMAT`: formato do output (json ou csv)
-`WD`: localização do scripts e pastas (devem estar pré-criadas_
-output_folder = 'output/'
-`SITE_URL`: site da Prefeitura contendo boletim epidemiológico
-`temp_images_folder`: localização da pasta em que ficarão armazenadas as imagens para análise
-`output_folder`: localização da pasta em que ficarão as saídas dos dados
+- `FORMAT`: formato do output (json ou csv)
+- `WD`: localização do scripts e pastas (devem estar pré-criadas)
+- `SITE_URL`: site da Prefeitura contendo boletim epidemiológico
+- `temp_images_folder`: localização da pasta em que ficarão armazenadas as imagens para análise
+- `output_folder`: localização da pasta em que ficarão as saídas dos dados
 
 
