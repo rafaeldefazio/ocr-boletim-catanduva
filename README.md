@@ -6,6 +6,8 @@ Implementação de solução de reconhecimento de caracteres para melhor acompan
 
 `roi.cpp` contém código experimental em C++, ainda não finalizado.
 
+![Exemplo](https://github.com/rafaeldefazio/ocr-boletim-catanduva/raw/master/exemplo.jpg)
+
 ### Requisitos:
 
 
