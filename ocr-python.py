@@ -167,11 +167,9 @@ else:
 	print("\n\n---\tATUALIZANDO %s\t---" % data_slash)
 	print("---\tUtilizando formato %s\t---\n\n" % FORMAT)
 
-	csv_columns = []
 
 	for k, v in rois.iteritems():
 
-		csv_columns.append(k.lower())
 
 
 		if (k == 'Data'):
@@ -180,7 +178,7 @@ else:
 			ocr_txt = "%s-%s-%s" % (mdY[2], mdY[1], mdY[0])
 
 			ocr[k.lower()] = ocr_txt
-			break
+			
 
 		scale_percent = 50 # percent of original size
 		width = int(v.shape[1] * scale_percent / 100)

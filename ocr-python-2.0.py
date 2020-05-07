@@ -108,6 +108,8 @@ else:
 
 	rects = {}
 
+	rects['Curados'] = (660, 875, 200, 50)
+
 	rects['Not_Grave'] = (507, 406, 240, 60)
 	rects['Susp_Grave'] = (507, 466, 240, 60)
 	rects['Desc_Grave'] = (507, 526, 240, 60)
@@ -143,7 +145,9 @@ else:
 		rois[k] = crop
 
 
+
 	rois['Data'] = data_crop
+	rois['Curados'] = 255 - rois['Curados']
 
 
 
@@ -154,11 +158,8 @@ else:
 	print("\n\n---\tATUALIZANDO %s\t---" % data_slash)
 	print("---\tUtilizando formato %s\t---\n\n" % FORMAT)
 
-	csv_columns = []
 
 	for k, v in rois.iteritems():
-
-		csv_columns.append(k.lower())
 
 
 		if (k == 'Data'):
@@ -167,7 +168,7 @@ else:
 			ocr_txt = "%s-%s-%s" % (mdY[2], mdY[1], mdY[0])
 
 			ocr[k.lower()] = ocr_txt
-			break
+			
 
 		scale_percent = 70 # percent of original size
 		width = int(v.shape[1] * scale_percent / 100)
@@ -177,8 +178,6 @@ else:
 		vresized = cv2.resize(v, dim, interpolation = cv2.INTER_AREA)
 
 
-		# cv2.imshow('pre', vresized)
-		# cv2.waitKey(0)
 
 
 
@@ -187,7 +186,6 @@ else:
 
 
 		
-
 
 		ocr[k.lower()] = ocr_txt
 
