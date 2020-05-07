@@ -17,7 +17,7 @@ Implementação de solução de reconhecimento de caracteres para melhor acompan
 ## Objetivo
 
 ## Versão 1
-![Exemplo](https://github.com/rafaeldefazio/ocr-boletim-catanduva/raw/master/exemplo2.jpg)
+![Exemplo](https://github.com/rafaeldefazio/ocr-boletim-catanduva/raw/master/exemplo.jpg)
 
 ## Versão 2
 
