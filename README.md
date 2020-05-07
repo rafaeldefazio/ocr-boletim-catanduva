@@ -2,11 +2,23 @@
 
 Implementação de solução de reconhecimento de caracteres para melhor acompanhamento epidemiológico na cidade de Catanduva. (`ocr-python.py`).
 
+
+## Como funciona?
+
 ![Representação](https://github.com/rafaeldefazio/ocr-boletim-catanduva/raw/master/schema.png)
 
-`roi.cpp` contém código experimental em C++, ainda não finalizado.
+### Funcionamento:
+1. Site da prefeitura é acessado
+2. Boletim do dia é baixado
+3. Imagem é pré-processada
+4. Dados são extraídos e salvos em formato `csv` ou `json`
 
-### Requisitos:
+
+## Objetivo
+![Exemplo](https://github.com/rafaeldefazio/ocr-boletim-catanduva/raw/master/exemplo.jpg)
+
+
+## Requisitos:
 
 
 - Python 2.7
@@ -23,13 +35,9 @@ OU
 - Tesseract 4.0
 
 
-### Funcionamento:
-1. Site da prefeitura é acessado
-2. Boletim do dia é baixado
-3. Imagem é pré-processada
-4. Dados são extraídos e salvos em formato `csv` ou `json`
 
-### Configurações
+
+## Configurações
 
 ```python
 # VARIÁVEIS
@@ -52,6 +60,10 @@ output_folder = 'output/'
 - Caminho XPath: `/html/body/div[4]/div/div[2]/div/div/div[1]/div/div[1]/div[1]/div[1]/p[1]/img`
 - Via Beautiful Soup: `div.blog-single > div.inner-box > p::first-child > img['src']`
 
+# Limitações
+
+O padrão da imagem deve ser mantido, os números devem ficar dentro dos limites, sem alteração de estrutura da imagem. A estrutura do site também deve ser mantida. Caso haja alterações, será necessário adaptar o script.
 
 # Roadmap
 - Cron diário com script
+- `roi.cpp` contém código experimental em C++, ainda não finalizado.
