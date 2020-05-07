@@ -143,6 +143,9 @@ else:
 		rois[k] = crop
 
 
+	rois['Data'] = data_crop
+
+
 
 # REALIZA RECONHECIMENTO
 
