@@ -10,7 +10,6 @@ from bs4 import BeautifulSoup as bs
 import csv
 import json
 
-
 # VARIÁVEIS
 FORMAT = 'json'
 WD = '/home/rafaelbdefazio/Imagens/covid-catanduva/exemplo/'
@@ -59,8 +58,6 @@ else:
 
 
 
-# image_src = WD + temp_images_folder + 'boletim_do_coronavirus_05-05-20.jpg'
-
 
 # COMEÇA OPENCV
 img = cv2.imread(image_src, cv2.IMREAD_GRAYSCALE)
@@ -75,15 +72,16 @@ result = th3
 
 # VERIFICAR DATA
 
-rect_data= (588, 386, 140, 40);
+rect_data= (590, 258, 137, 32);
 x = rect_data[0] + rect_data[2]
 y = rect_data[1] + rect_data[3]
 data_crop = result[int(rect_data[1]):int(y), int(rect_data[0]):int(x)]
-scale_percent = 50 # percent of original size
+scale_percent = 70 # percent of original size
 width = int(data_crop.shape[1] * scale_percent / 100)
 height = int(data_crop.shape[0] * scale_percent / 100)
 dim = (width, height)
 vresized_crop = cv2.resize(data_crop, dim, interpolation = cv2.INTER_AREA)
+
 
 ocr_txt_data = pytesseract.image_to_string(vresized_crop, lang='por', \
 		  config='--psm 8 --oem 0 -c tessedit_char_whitelist=0123456789.')
@@ -92,11 +90,11 @@ mdY = ocr_txt_data.split('.')
 
 data_slash = "%s-%s-%s" % (mdY[2], mdY[1], mdY[0])
 
+	
 filename = "%s.%s" % (data_slash, FORMAT)
 
 
 data_file = WD + output_folder + filename
-
 
 
 if os.path.isfile(data_file):
@@ -110,37 +108,23 @@ else:
 
 	rects = {}
 
-	rects['Not_Total'] = (45, 571, 510, 133)
-	rects['Not_Susp'] = (45, 720, 168, 95);
-	rects['Not_Desc'] = (219, 720, 168, 95);
-	rects['Not_Conf'] = (392, 720, 168, 95);
+	rects['Not_Grave'] = (507, 406, 240, 60)
+	rects['Susp_Grave'] = (507, 466, 240, 60)
+	rects['Desc_Grave'] = (507, 526, 240, 60)
+	rects['Conf_Grave'] = (507, 586, 240, 50)
 
 
-	  #// -- INTERNADOS
+	rects['Not_Leve'] = (799, 406, 193, 60)
+	rects['Susp_Leve'] = (799, 466, 193, 60)
+	rects['Desc_Leve'] = (799, 526, 193, 60)
+	rects['Conf_Leve'] = (799, 586, 193, 50)
+
+	rects['Inter_Susp'] = (507, 729, 240, 60)
+	rects['Inter_Conf'] = (507, 789, 240, 60)
 
 
-	rects['Int_Susp'] = (576, 571, 171, 75);
-	rects['Int_Conf'] = (748, 571, 171, 75);
-	rects['Int_Tot'] = (918, 571, 171, 75);
-
-
-
-	  #// -- ÓBITOS
-
-
-	rects['Obt_Susp'] = (576, 741, 171, 75);
-	rects['Obt_Conf'] = (748, 741, 171, 75);
-	rects['Obt_Tot'] = (918, 741, 171, 75);
-
-
-	  #// -- Data
-
-	rects['Data'] = (588, 386, 140, 40);
-
-
-	  #// -- CASOS LEVES
-
-	rects['Lev_Tot'] = (661, 1008, 260, 80);
+	rects['Obito_Susp'] = (761, 729, 240, 60)
+	rects['Obito_Conf'] = (761, 789, 240, 60)
 
 
 	rois = {}
@@ -182,7 +166,7 @@ else:
 			ocr[k.lower()] = ocr_txt
 			break
 
-		scale_percent = 50 # percent of original size
+		scale_percent = 70 # percent of original size
 		width = int(v.shape[1] * scale_percent / 100)
 		height = int(v.shape[0] * scale_percent / 100)
 		dim = (width, height)
