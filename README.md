@@ -51,12 +51,6 @@ OU
 ## Configurações
 
 ```python
-# coding: utf8
-from OCRCatanduva import OCRBoletimCatanduva, SaveImage, SaveFile
-import sys
-import datetime
-
-
 TEMP_IMAGE_FOLDER = './temp_images'
 OUTPUT_FOLDER = './output'
 FILE_FORMAT = 'json'
