@@ -24,8 +24,7 @@ A versão mais atualizada está em `/python/`, dia **08/05/2020**, com as versõ
 
 ![Exemplo 2](https://github.com/rafaeldefazio/ocr-boletim-catanduva/raw/master/exemplo2.jpg)
 
-
-## Versão 2
+## Versão 3
 
 ![Exemplo 3](https://github.com/rafaeldefazio/ocr-boletim-catanduva/raw/master/exemplo3.jpg)
 
