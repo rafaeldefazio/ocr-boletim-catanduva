@@ -1,7 +1,8 @@
 # OCR: Boletim de Catanduva
 
-Implementação de solução de reconhecimento de caracteres para melhor acompanhamento epidemiológico na cidade de Catanduva. (`ocr-python.py`).
+Implementação de solução de reconhecimento de caracteres para melhor acompanhamento epidemiológico na cidade de Catanduva, por meio de classe `OCRBoletimCatanduva`.
 
+A versão mais atualizada está em `/python/`, dia **08/05/2020**, com as versões mostradas abaixo.
 
 ## Como funciona?
 
@@ -22,6 +23,11 @@ Implementação de solução de reconhecimento de caracteres para melhor acompan
 ## Versão 2
 
 ![Exemplo 2](https://github.com/rafaeldefazio/ocr-boletim-catanduva/raw/master/exemplo2.jpg)
+
+
+## Versão 2
+
+![Exemplo 3](https://github.com/rafaeldefazio/ocr-boletim-catanduva/raw/master/exemplo3.jpg)
 
 
 ## Requisitos:
@@ -46,19 +52,73 @@ OU
 ## Configurações
 
 ```python
-# VARIÁVEIS
-FORMAT = 'json'
-WD = '/home/rafaelbdefazio/Imagens/covid-catanduva/exemplo/'
-SITE_URL = 'http://www.catanduva.sp.gov.br/coronavirus/'
+# coding: utf8
+from OCRCatanduva import OCRBoletimCatanduva, SaveImage, SaveFile
+import sys
+import datetime
 
-temp_images_folder = 'temp_images/']
-output_folder = 'output/'
+
+TEMP_IMAGE_FOLDER = './temp_images'
+OUTPUT_FOLDER = './output'
+FILE_FORMAT = 'json'
+BOLETIM_URL = 'http://www.catanduva.sp.gov.br/coronavirus/'
+TAMANHO_IMAGEM = (1134, 1134)
+
+
+date = (588, 386, 140, 40)
+
+rects = {}
+
+rects['Not_Total'] = (45, 571, 510, 133)
+rects['Not_Susp'] = (45, 720, 168, 95)
+rects['Not_Desc'] = (219, 720, 168, 95)
+rects['Not_Conf'] = (392, 720, 168, 95)
+
+
+  #// -- INTERNADOS
+
+
+rects['Int_Susp'] = (576, 571, 171, 75)
+rects['Int_Conf'] = (748, 571, 171, 75)
+rects['Int_Total'] = (918, 571, 171, 75)
+
+
+
+  #// -- ÓBITOS
+
+
+rects['Obt_Susp'] = (576, 741, 171, 75)
+rects['Obt_Conf'] = (748, 741, 171, 75)
+rects['Obt_Total'] = (918, 741, 171, 75)
+
+  #// -- CASOS LEVES
+
+rects['Lev_Total'] = (661, 1008, 260, 80);
+
+
+
+salvarBoletim = SaveImage(TEMP_IMAGE_FOLDER, BOLETIM_URL)
+ocr = OCRBoletimCatanduva(salvarBoletim, TAMANHO_IMAGEM, date, rects)
+
+ocrDate = datetime.datetime.strptime(ocr.date, "%Y-%m-%d")
+ocrDateNow = datetime.datetime.now()
+
+
+if ocrDate > ocrDateNow:
+	print("Data inválida")
+	sys.exit()
+elif ocrDate.year != 2020:
+	print("Data inválida")
+	sys.exit()
+
+
+salvarDados = SaveFile(ocr.date, OUTPUT_FOLDER, FILE_FORMAT, ocr.ocrs)
 ```
 - `FORMAT`: formato do output (json ou csv)
-- `WD`: localização do scripts e pastas (devem estar pré-criadas)
-- `SITE_URL`: site da Prefeitura contendo boletim epidemiológico
-- `temp_images_folder`: localização da pasta em que ficarão armazenadas as imagens para análise
-- `output_folder`: localização da pasta em que ficarão as saídas dos dados
+- `BOLETIM_URL`: site da Prefeitura contendo boletim epidemiológico
+- `TEMP_IMAGE_FOLDER`: localização da pasta em que ficarão armazenadas as imagens para análise
+- `OUTPUT_FOLDER`: localização da pasta em que ficarão as saídas dos dados
+- `TAMANHO_IMAGEM` tamanho da imagem para padronizar processamento
 
 
 ## Estrutura HTML
